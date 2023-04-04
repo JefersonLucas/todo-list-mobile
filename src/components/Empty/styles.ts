@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { theme } from '../../styles/theme'
+import { theme } from '../../theme'
 
 export const styles = StyleSheet.create({
 	emptyContainer: {
@@ -14,17 +14,15 @@ export const styles = StyleSheet.create({
 		borderBottomColor: theme.colors.base.gray600,
 		borderWidth: 1,
 	},
-	clipboard: {
+	image: {
 		marginBottom: 16,
 	},
-	firstText: {
-		fontSize: theme.font_size.md,
+	textBold: {
+		fontSize: 14,
 		fontFamily: theme.font_family.bold,
 		color: theme.colors.base.gray300,
 	},
-	secondText: {
-		fontSize: theme.font_size.md,
+	textRegular: {
 		fontFamily: theme.font_family.regular,
-		color: theme.colors.base.gray300,
 	},
 })

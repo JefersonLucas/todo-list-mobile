@@ -1,24 +1,25 @@
-import { Text, TouchableOpacity, View } from 'react-native'
+import { TouchableOpacity, View, Text } from 'react-native'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { styles } from './styles'
-import { theme } from '../../styles/theme'
-import { Icon } from '../Icon'
+import { theme } from '../../theme'
+import { TaskDTO } from '../../dtos/TaskDTO'
 
-export type TaskProps = {
-	id: string
-	title: string
-	isCompleted: boolean
+type TasksProps = TaskDTO & {
+	onTaskDone: (id: string) => void
+	onTaskDeleted: (id: string) => void
 }
 
-interface Props extends TaskProps {
-	taskDone: (id: string) => void
-	deleteTask: (id: string) => void
-}
-
-export function Task({ id, isCompleted, title, taskDone, deleteTask }: Props) {
+export function Task({
+	id,
+	title,
+	isCompleted,
+	onTaskDone,
+	onTaskDeleted,
+}: TasksProps) {
 	return (
-		<View style={styles.container}>
-			<TouchableOpacity onPressIn={() => taskDone(id)}>
-				<Icon
+		<View style={styles.taskContainer}>
+			<TouchableOpacity onPress={() => onTaskDone(id)}>
+				<MaterialCommunityIcons
 					name={
 						isCompleted
 							? 'checkbox-marked-circle-outline'
@@ -32,6 +33,7 @@ export function Task({ id, isCompleted, title, taskDone, deleteTask }: Props) {
 					}
 				/>
 			</TouchableOpacity>
+
 			<View style={styles.textContainer}>
 				<Text
 					style={isCompleted ? styles.textDone : styles.textCreated}
@@ -39,8 +41,9 @@ export function Task({ id, isCompleted, title, taskDone, deleteTask }: Props) {
 					{title}
 				</Text>
 			</View>
-			<TouchableOpacity onPressIn={() => deleteTask(id)}>
-				<Icon
+
+			<TouchableOpacity onPress={() => onTaskDeleted(id)}>
+				<MaterialCommunityIcons
 					name="trash-can-outline"
 					size={20}
 					color={theme.colors.base.gray300}
