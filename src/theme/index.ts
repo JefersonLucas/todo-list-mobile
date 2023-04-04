@@ -8,15 +8,14 @@ export const theme = {
 			gray500: '#262626',
 			gray600: '#1A1A1A',
 			gray700: '#0D0D0D',
+			danger: '#E25858',
 		},
 		brand: {
 			purple: '#8284FA',
-			purpleDark: '#5E60CE',
+			purple_dark: '#5E60CE',
 
 			blue: '#4EA8DE',
-			blueDark: '#1E6F9F',
-
-			danger: '#E25858',
+			blue_dark: '#1E6F9F',
 		},
 	},
 	font_family: {
