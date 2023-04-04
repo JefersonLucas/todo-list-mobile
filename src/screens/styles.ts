@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { theme } from '../../styles/theme'
+import { theme } from '../theme'
 
 export const styles = StyleSheet.create({
 	container: {
@@ -11,32 +11,25 @@ export const styles = StyleSheet.create({
 		marginTop: 55,
 		marginHorizontal: 24,
 	},
+	tasksCreated: {
+		color: theme.colors.brand.blue,
+		fontSize: theme.font_size.md,
+		fontFamily: theme.font_family.bold,
+	},
+	tasksDone: {
+		color: theme.colors.brand.purple,
+		fontSize: theme.font_size.md,
+		fontFamily: theme.font_family.bold,
+	},
 	info: {
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'space-between',
 		marginBottom: 20,
 	},
-	left: {
+	row: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	right: {
-		flexDirection: 'row',
-		alignItems: 'center',
-	},
-	created: {
-		color: theme.colors.brand.blue,
-		fontSize: theme.font_size.md,
-		fontFamily: theme.font_family.bold,
-		marginLeft: 4,
-	},
-	done: {
-		color: theme.colors.brand.purple,
-		fontSize: theme.font_size.md,
-		fontFamily: theme.font_family.bold,
-		marginLeft: 4,
 	},
 	counterContainer: {
 		backgroundColor: theme.colors.base.gray400,
@@ -51,8 +44,5 @@ export const styles = StyleSheet.create({
 		color: theme.colors.base.gray200,
 		fontSize: theme.font_size.sm,
 		fontFamily: theme.font_family.bold,
-	},
-	list: {
-		marginTop: 20,
 	},
 })
